@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<script src="rrecur.js"></script>
+<script src="rrecur-iterator.js"></script>
+<!--<script src="require2.3.5.js"></script>-->
+<script src="rrule.js"></script>
+
+<script type="text/javascript">"test.js"</script>
+</head>
+
+<body>
+	
+
+<script type="text/javascript">
+	 console.log('AAAAAAAAAAAA');
+
+(function (exports) {
+  'use strict';
+
+  var Rrecur = exports.Rrecur || require('rrecur').Rrecur
+    , rfcString
+    ;
+
+  rfcString = Rrecur.stringify({
+    "freq": "monthly"
+  , "interval": "2"
+  , "count": "10"
+  , "byday": ["1su","-1su"]
+  });
+//FREQ=MONTHLY;INTERVAL=2;COUNT=10;BYDAY=1SU,-1SU
+
+console.log(rfcString);
+
+ var rfcString2 = Rrecur.parse(
+"DTSTART=20140616T103000Z;FREQ=DAILY;BYHOUR=10;BYMINUTE=30;BYSECOND=0;UNTIL=20150616T153000Z"
+  );
+
+console.log(rfcString2);
+
+
+}('undefined' !== typeof exports && exports || new Function('return this')()));
+
+
+	 console.log('AAAAAAAAAAAA -END');
+</script>
+
+
+
+</body>
