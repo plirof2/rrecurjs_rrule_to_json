@@ -10,11 +10,25 @@
 </head>
 
 <body>
-	
+  
+<BR>  
+<form>
+rruleField :<textarea name="rruleField" rows=10 cols=50 style="font-size: 16pt" maxlength="512" id="rruleField" class="rruleField" value="FREQ=WEEKLY;DTSTART=20171012T000000Z;INTERVAL=1;BYDAY=MO;UNTIL=20180630T040000Z" />  FREQ=WEEKLY;DTSTART=20171012T000000Z;INTERVAL=1;BYDAY=MO;UNTIL=20180630T040000Z
+</textarea>
 
-<script type="text/javascript">
-	 console.log('AAAAAAAAAAAA');
+<BR>
+<BR>
+json field : <textarea name="JSONTxt" rows=10 cols=50  style="font-size: 16pt" id="JSONTxt" class="JSONTxt"/>
+</textarea>
 
+<BR>
+<input onclick="submit_clicked()" type=button value="convert RRULE to JSON">
+
+</form>
+<script type="text/javascript" >
+   console.log('AAAAAAAAAAAA');
+
+/*
 (function (exports) {
   'use strict';
 
@@ -36,13 +50,30 @@ console.log(rfcString);
 "DTSTART=20140616T103000Z;FREQ=DAILY;BYHOUR=10;BYMINUTE=30;BYSECOND=0;UNTIL=20150616T153000Z"
   );
 
+
 console.log(rfcString2);
 
+//var json_rfc=Rrecur.parse(document.getElementById('rruleField').value);
+//console.log("JSONNNNNNN");
+//  console.log(json_rfc);
+//document.getElementById('JSONTxt').value=JSON.stringify(json_rfc);
 
 }('undefined' !== typeof exports && exports || new Function('return this')()));
+*/
+
+   console.log('AAAAAAAAAAAA -END');
 
 
-	 console.log('AAAAAAAAAAAA -END');
+function submit_clicked() {
+    var json_rfc=Rrecur.parse(document.getElementById('rruleField').value);
+    document.getElementById('JSONTxt').value=JSON.stringify(json_rfc);
+    //console.log("JSONNNNNNN");
+  console.log(json_rfc);
+
+
+}
+
+
 </script>
 
 
